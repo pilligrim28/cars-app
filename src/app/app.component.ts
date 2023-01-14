@@ -93,19 +93,20 @@ export class AppComponent {
     if (car) {
       this.priceForm.patchValue({ car: car.name });
     }
-
+  }
     trans: any;
     @HostListener('document:mousemove', ['$event'])
     onmousemove(e: MouseEvent) {
-      this.trans = { transform: 'translate3d(' + ((e.clientX * 0.3) / 8) + 'px,' + ((e.clientY * 0.3) / 8) + 'px,0px)' };
+      this.trans = { transform: 'translate3d(' + ((e.clientX * 0.6) / 8) + 'px,' + ((e.clientY * 0.35) / 8) + 'px,0px)' };
     }
 
     bgPos: any;
     @HostListener('document:scroll', ['$event'])
     onScroll() {
-      this.bgPos = { backgroundPositionX: '0' + (0.3 * window.scrollY) + 'px' };
+      this.bgPos = { backgroundPositionX: '0' + (0.25 * window.scrollY) + 'px' };
     }
-  }
+  
+
   
   onSubmit() {
     if (this.priceForm.valid) {
@@ -114,3 +115,4 @@ export class AppComponent {
     }
   }
 }
+
